@@ -1,0 +1,221 @@
+import java.util.Scanner;
+
+public class GameTaxingTales{
+   public static void main(String[] args){
+      Scanner in = new Scanner(System.in);
+      
+      // INVENTORY
+      String[] inventory = new String[20];
+      int itemCount = 0;
+      
+      /*
+      boolean hasTraveled = false;
+      String lastLocation = "start";
+      */
+      
+      System.out.println("\t\t._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*");
+      System.out.println("\t\t            TAXING TALES  ");
+      System.out.println("\t\t._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*");
+      System.out.println("\n\t\t\t\t-A little adventure by Camille Kamai :D");
+      System.out.println("\nPress <enter> to continue...");
+      in.nextLine();
+
+      
+      // Humble beginnings/intro
+      System.out.println("\t\t\t\t\t\t\t\t\t\t               .");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              / \\");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              | |");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              | |");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              |.|"); 
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              |.|");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              |:|");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t   ^~^  ,     |:|");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t  ('Y') )   `--8--'");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t  /   \\/       8");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t (\\|||/)hjw    O ");
+      
+      System.out.println("\t\tYou are PUSHEEN! Fiercest kitty warrior (though some may say laziest) of the land! <enter> ");
+      in.nextLine();
+      System.out.println("\n\t\tYou live peacefully with your sister, Stormy. A fluffy itty bitty kitty! <enter> ");
+      in.nextLine();
+      System.out.println("\n\t\tbut OH NO!!! Here comes Rodeo! The orange menace! <enter> ");
+      in.nextLine();
+      System.out.println("\n\t\tNOOOO! He's kidnapped sister Stormy\n\t\t\t\t\tDO SOMETHING!!! <enter> ");
+      in.nextLine();
+      
+      // CHOICE: Time of day
+      // (choiceToD)
+      System.out.println("\t\tWAIT!!!!!!!... <enter>");
+      in.nextLine();
+      System.out.println("\t\tWhat time of day is it? <morning/evening> ");
+      String choiceToD = in.nextLine();
+      
+      if (choiceToD.equalsIgnoreCase("morning")){
+         System.out.println("Ok! So now... WE RIDE!!! POST HASTE!!! <enter>");
+         in.nextLine();
+      } else {
+         System.out.println("Adventure is a lot of work for a kitty... nobody would mind us taking a cat nap for a bit~ <enter> ");
+         in.nextLine();
+      }
+      
+      // CHOICE: Where to go? (choiceToGo) > Pool Party, The Great Wall with China, Dis Track To Me, Herb-acious
+         System.out.println("\t\tWhich direction should Pusheen go to save sister Stormy?");
+         System.out.println("\t\t1) Pool Party");
+         System.out.println("\t\t2) The Great Wall with China");
+         System.out.println("\t\t3) Dis Track To Me");
+         System.out.println("\t\t4) Herb-acious~");
+         String choiceToGo = in.nextLine();
+         
+      // CHOICE: Pool Party
+      
+      // CHOICE: The Great Walls with China
+      
+      // CHOICE:  Dis Track To Me
+      // (choiceShades)
+     while (true){
+         System.out.println("\t\tYou have arrived to the wonderful land of DisTrackToMe! What shall we do here?");
+         System.out.println("\t\t1) Check out the window shades");
+         System.out.println("\t\t2) Mess with the highly reflective thing");
+         System.out.println("\t\t3) ...art pen?");
+         System.out.println("\t\t4) Move on~");
+         
+         String distracktomeChoice1 = in.nextLine();
+         
+         if (distracktomeChoice1.equals("1")){
+            System.out.println("\t\tThe shades are closed... <enter> ");
+            in.nextLine();
+            System.out.println("\t\tShall we open them? <open/leave> ");
+            
+            String choiceShades = in.nextLine();
+            
+            if (choiceShades.equalsIgnoreCase("open")){
+               shadesOpen = true;
+               System.out.println("\t\t\t\t\t\t\t\t\t\t (IIIIIIIIIIIIIIIIIII) ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.'.':;:;:'.'.'.'( ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.'.;' | `:.'.'.') ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.';'  |  `:'.'.'( ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.;'   |   `:.'.') ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t )'.';'____|____`:'.'( ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t (==@'     |     `@==) ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t )'.:     @()     :.'( ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.   ()@()   .'.') ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.  ()@()@)  .'.'( ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.   _\|/_   .'.') ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.  |-----|  .'.'( ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.___\___/___.'.') ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'============='.'( ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'             '.') ");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t  ~                 ~ ");
+               System.out.println("Ooo! It's so lovely outside right now! <3");
+            } else (choiceShades.equalsIgnorecase("leave")){
+               shadesOpen = false;
+               System.out.println("That's cool...");
+            }
+         } else if (distracktomeChoice1.equals("2")){
+            System
+         } else if (distracktomeChoice1.equals("3")){
+            System
+         } else if (distracktomeChoice1.equals("3")){
+            System 
+         } else {
+            System.out.println("I mean... I didn't want to do anything today either. Let's just nap and try again later!");
+            break;
+         }
+         
+      }
+      
+      System.out.println("\t\tYou notice an art pen? Just sitting there... MENACINGLY! <enter>");
+      in.nextLine();
+      System.out.println("\t\tWhat do you do with the art pen? <leave it/tuck it away> ");
+      String choiceArtPen = in.nextLine();
+      
+      if (choiceArtPen.equalsIgnoreCase("leave it")){
+         System.out.println("Meh~ <enter>");
+         in.nextLine();
+      } else {
+         System.out.println("Hmmm... what if we hide it... UNDER THE COUCH!!! <enter>");
+         in.nextLine();
+      }
+      
+      
+      // CHOICE: Herb-acious
+      
+      // WWIV - Facing Rodeo!
+      if (shadesOpen && choiceToD.equalsIgnoreCase("morning")){
+         // ENDING 1: ADHD
+         System.out.println("The call of the wild beckons Rodeo to the window~");
+         System.out.println("He heeds it willingly! Chirping at every aviary flutter that passes by~");
+         System.out.println("He's going to be here a while... There's always online automatic tax filing features anyway~ Go home!");
+         System.out.println("\n\n\tENDING: ADHD");
+      } else if (shadesOpen && choiceToD.equalsIgnoreCase("evening")){
+         // ENDING 2: 
+      }
+      
+      
+      
+   }
+
+}
+
+
+// for copy/paste use
+/*
+      System.out.println(" ");
+      in.nextLine();
+      
+      <enter>
+*/
+
+
+// ASCII art credit
+/*      
+// window art credit: no artist?
+// https://www.asciiart.eu/art/d22388d2f1bfa825
+
+(IIIIIIIIIIIIIIIIIII)
+)'.'.'.':;:;:'.'.'.'(
+('.'.'.;' | `:.'.'.')
+)'.'.';'  |  `:'.'.'(
+('.'.;'   |   `:.'.')
+)'.';'____|____`:'.'(
+(==@'     |     `@==)
+)'.:     @()     :.'(
+('.'.   ()@()   .'.')
+)'.'.  ()@()@)  .'.'(
+('.'.   _\|/_   .'.')
+)'.'.  |-----|  .'.'(
+('.'.___\___/___.'.')
+)'.'============='.'(
+('.'             '.')
+ ~                 ~
+
+
+// sword art credit: no artist?
+// https://www.asciiart.eu/art/46607bdc9af399ea
+   .
+  / \
+  | |
+  | |
+  |.|
+  |.|
+  |:|
+  |:|
+`--8--'
+   8
+   O
+
+
+// cat art credit: Haley Jane Wakenshaw (Flump)
+// title: Cat
+// https://www.asciiart.eu/art/1939d7cfa2cd18cd
+  ^~^  ,
+ ('Y') )
+ /   \/
+(\|||/) hjw
+
+
+// boarder credit: no artist?
+// https://www.asciiart.eu/ascii-dividers/gallery      
+:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*
+      
+*/
