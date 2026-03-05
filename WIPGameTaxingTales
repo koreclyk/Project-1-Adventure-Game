@@ -8,7 +8,8 @@ public class GameTaxingTales{
       String[] inventory = new String[5]; // I don't NEED 20 spaces BUT I want extra spaces in case I've missed something in the code... hopefully it prevents a crash~
       int itemCount = 0;
       
-      // I'm setting up the loops so you CAN'T go back anywa
+      // I'm setting up the loops so you CAN'T go back anyway
+      // if I set up booleans in the right place, I can call on them in the right places AND in the right situations
       /*
       boolean hasTraveled = false;
       String lastLocation = "start";
@@ -113,7 +114,6 @@ public class GameTaxingTales{
             
          // CHOICE: Pool Party
          if (choiceToGo.equals("1")){
-            
             boolean inPoolParty = true;
             
             while (inPoolParty){
@@ -145,7 +145,6 @@ public class GameTaxingTales{
          
          // CHOICE: The Great Walls with China
          else if (choiceToGo.equals("2")){
-         
             boolean inTheGreatWalls = true;
             
             while (inTheGreatWalls){
@@ -276,7 +275,11 @@ public class GameTaxingTales{
                   } else if (choiceWeed.equals("2")){
                      System.out.println("Time to tote it!");
                      
-                  }
+                  } 
+               } else if (herbAciousChoice.equals("2")){
+                  System.out.println("Uhh.... ohh... <enter>");
+                  in.nextLine();
+                  System.out.println("Pusheen is... high? Definitely too high to function... I guess we just... chill~"); // ENDING: weed
                }
             
                } else {
