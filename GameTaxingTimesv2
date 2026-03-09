@@ -313,13 +313,7 @@ public class WIPGameTaxingTales{
                      System.out.println("Pusheen needs a number between 1 and 3. Try again! <enter>");
                      in.nextLine();
                   }
-                     
-               // ENDING: Broke da game      
-               } else {
-                  System.out.println("Not sure how you did it but you've managed to break my game. Congratz... I'll go... kick rocks or something..."); 
-                  inPoolParty = false;
-                  exploringPlaces = false;
-               }
+                
             }
          }
          
