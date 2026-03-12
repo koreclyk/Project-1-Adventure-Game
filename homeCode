@@ -1,0 +1,981 @@
+import java.util.Scanner;
+
+public class WIPGameTaxingTales{
+   public static void main(String[] args){
+      Scanner in = new Scanner(System.in);
+      
+      // INVENTORY
+      String[] inventory = new String[5]; // I don't NEED 20 spaces BUT I want extra spaces in case I've missed something in the code... hopefully it prevents a crash~
+      int itemCount = 0;
+      boolean bagEmpty = true;
+      
+      System.out.println("\t\t._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*");
+      System.out.println("\t\t            TAXING TALES  ");
+      System.out.println("\t\t._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*");
+      System.out.println("\n\t\t\t\t-A little adventure by Camille Kamai :D");
+      System.out.println("\nPress <enter> to continue...");
+      in.nextLine();
+
+      
+      // Humble beginnings/intro
+      System.out.println("\t\t\t\t\t\t\t\t\t\t               .");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              / \\");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              | |");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              | |");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              |.|"); 
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              |.|");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t              |:|");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t   ^~^  ,     |:|");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t  ('Y') )   `--8--'");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t  /   \\/       8");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t (\\|||/)hjw    O ");
+      
+      System.out.println("\t\tYou are PUSHEEN! Fiercest kitty warrior (though some may say laziest) of the land! <enter> ");
+      in.nextLine();
+      System.out.println("\n\t\tYou live peacefully with your sister, Stormy. A fluffy itty bitty kitty! <enter> ");
+      in.nextLine();
+      System.out.println("\n\t\tbut OH NO!!! Here comes Rodeo! The orange menace! <enter> ");
+      in.nextLine();
+      System.out.println("\n\t\tNOOOO! He's kidnapped sister Stormy\n\t\t\t\t\tDO SOMETHING!!! <enter> ");
+      in.nextLine();
+      
+      // CHOICE: Time of day
+      // boolean weatherMeNot = true;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      // (choiceToD)
+      String choiceToD = "";
+      
+      boolean weatherMeNot = true;
+      while (weatherMeNot){
+         
+         System.out.println("\t\tWAIT!!!!!!!... <enter>");
+         in.nextLine();
+         System.out.println("\t\tWhat time of day is it? <morning/evening> ");
+         choiceToD = in.nextLine();
+         
+         if (choiceToD.equalsIgnoreCase("morning")){
+            System.out.println("Ok! So now... WE RIDE!!! POST HASTE!!! <enter>");
+            in.nextLine();
+            weatherMeNot = false;
+         } else if (choiceToD.equalsIgnoreCase("evening")){
+            System.out.println("Adventure is a lot of work for a kitty... nobody would mind us taking a cat nap for a bit~ <enter> ");
+            in.nextLine();
+            weatherMeNot = false;
+         } else {
+            System.out.println("That isn't a valid option! Try again!");
+         }
+         
+      }
+      // boolean weatherMeNot = false;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      
+      
+      
+      // CHOICE: Where to go? (choiceToGo) > Pool Party, The Great Wall with China, Dis Track To Me, Herb-acious
+      // boolean exploringPlaces = true;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      boolean exploringPlaces = true;
+      
+      // 1) Pool Party
+      boolean hasAmazonToilet = false; // inventory
+      boolean hoboHouseTrashed = false;
+      boolean hasSpritzer = false; // inventory
+      
+      // 2) The Great Walls
+      boolean hasTuna = false; // inventory
+      boolean hasDryTuna = false; // inventory > make hasTuna false IF the player dries the tuna
+      boolean hasChicken = false; // inventory
+      boolean hasDryChicken = false; // inventory > make hasChicken false IF the player dries the chicken
+      boolean hasHam = false; // inventory
+      boolean hasDryHam = false; // inventory > make hasHam false IF the player dries the ham
+      
+      // 3) Dis Track To Me
+      boolean shadesOpen = false;
+      boolean hasShiny = false; // inventory
+      boolean hidArtPen = false;
+      
+      // 4) Herb-acious
+      boolean hasWeed = false; // inventory
+      boolean hasStinkyPlush = false; // inventory > make hasWeed false IF the player rolls the dolly in the weed
+      boolean lucyInTheSkywd = false;
+       
+      
+      while (exploringPlaces){
+         
+         System.out.println("\t\tSince it's now " + choiceToD + ",\n\t\twhich direction should Pusheen go to save sister Stormy?");
+         System.out.println("\t\t1) Pool Party <1>");
+         System.out.println("\t\t2) The Great Wall with China <2>");
+         System.out.println("\t\t3) Dis Track To Me <3>");
+         System.out.println("\t\t4) Herb-acious~ <4>");
+         String choiceToGo = in.nextLine();
+            
+         // CHOICE: Pool Party
+         if (choiceToGo.equals("1")){
+            boolean inPoolParty = true;
+            
+            while (inPoolParty){
+               // AM
+               if (choiceToD.equalsIgnoreCase("morning")){
+                  System.out.println("\t\tWow! There's so many cool cats here! Pusheen might buy some sunglasses to blend in~");
+                  System.out.println("\n\t\tPusheen notices interesting things... What should he interact with?");
+                  System.out.println("\t\t1) The cool cat with sassy sun glasses B) <1>");
+                  System.out.println("\t\t2) A fun looking bottle! <2>");
+                  System.out.println("\t\t3) An out of place box? <3>");
+                  System.out.println("\t\t4) or move on to the last stage~ <4>");
+                  
+                  String poolpartyAMChoice = in.nextLine();
+                  
+                  if (poolpartyAMChoice.equals("1")){
+                     System.out.println("\t\tThat cool cat has some cool advice! <enter>");
+                     in.nextLine();
+                     System.out.println("\t\t'Amazon a toilet! He can have his own pool party in one!', he says. <enter>");
+                     in.nextLine();
+                     System.out.println("\n\t\tShould Pusheen listen to these cool words? <yes/no> ");
+                     
+                     String coolCatChoice = in.nextLine();
+                     
+                     if (coolCatChoice.equalsIgnoreCase("yes")){
+                        for (int i = 0; i < itemCount; i++){
+                           if (inventory[i] != null && inventory[i].equalsIgnoreCase("Amazon Toilet")){
+                              hasAmazonToilet = true;
+                              bagEmpty = false;
+                              break;
+                           }
+                        }
+                        if (hasAmazonToilet){
+                           System.out.println("Pusheen already has this! Chill! <enter>");
+                           in.nextLine();
+                        } else if (itemCount == inventory.length){
+                           System.out.println("Pusheen's bag is full! <enter>");
+                           in.nextLine();
+                        } else {
+                           System.out.println("AWESOME! Amazon says it's out for delivery already! Beautiful! <enter> ");
+                           inventory[itemCount] = "Amazon Toilet";
+                           itemCount++;
+                           hasAmazonToilet = true;
+                           bagEmpty = false;
+                           in.nextLine();
+                        }
+                     
+                     } else if (coolCatChoice.equalsIgnoreCase("no")){
+                        System.out.println("No worries! Let's PARTY! <enter>");
+                        in.nextLine();
+                     } else {
+                        System.out.println("So... was that a 'yes' or 'no' to the Amazon toilet? Try again! <enter>");
+                        in.nextLine();
+                     }
+                  
+                  } else if (poolpartyAMChoice.equals("2")){
+                     System.out.println("\t\tOh! It's a spritzer! Take it with us? <yes/no> ");
+                     
+                     String spritzerAMChoice = in.nextLine();
+                     
+                     if (spritzerAMChoice.equalsIgnoreCase("yes")){
+                        for (int i = 0; i < itemCount; i++){
+                           if (inventory[i] != null && inventory[i].equalsIgnoreCase("Spritzer")){
+                              hasSpritzer = true;
+                              bagEmpty = false;
+                              break;
+                           }
+                        }
+                        if (hasSpritzer){
+                           System.out.println("Pusheen already has this! Chill! <enter>");
+                           in.nextLine();
+                        } else if (itemCount == inventory.length){
+                           System.out.println("Pusheen's bag is full! <enter>");
+                           in.nextLine();
+                        } else {
+                           System.out.println("Ok! Let's bring it with us! <enter>");
+                           inventory[itemCount] = "Spritzer";
+                           itemCount++;
+                           hasSpritzer = true;
+                           bagEmpty = false;
+                           in.nextLine();
+                        }
+                     } else if (spritzerAMChoice.equalsIgnoreCase("no")){
+                        System.out.println("It was weird looking anyway! LET'S DANCE!!!! <enter>");
+                        in.nextLine();
+                     } else {
+                        System.out.println("Looking more for a 'yes' or 'no' answer. Try again! <enter>");
+                        in.nextLine();
+                     }
+                  } else if (poolpartyAMChoice.equals("3")){
+                     System.out.println("\t\tPusheen's not sure what to make of this box... what should we do?");
+                     System.out.println("\n\t\t1) Sit in it <1>");
+                     System.out.println("\n\t\t2) Leave it <2>");
+                     System.out.println("\n\t\t3) TRASH IT!! <3>");
+                     
+                     String hoboHouseAMChoice = in.nextLine();
+                     
+                     // OOPS ENDING: Hobo House
+                     if (hoboHouseAMChoice.equals("1")){
+                        System.out.println("Ohh... Pusheen kinda likes it here <3 we fit... so stay and sit! <enter>");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<\n\t\t\t\t\t\t\t\t\t\t\t\tHobo House ending"); 
+                        inPoolParty = false;
+                        exploringPlaces = false;
+                        System.exit(0);
+                     
+                     
+                     } else if (hoboHouseAMChoice.equals("2")){
+                        System.out.println("Meh, it was weird anyway <enter>");
+                        in.nextLine();
+                     } else if (hoboHouseAMChoice.equals("3")){
+                        System.out.println("MWAHAHAHAHAHAHAHAHAAAAAAAAAAAAAA!!! <enter>");
+                        in.nextLine();
+                        hoboHouseTrashed = true;
+                     } else {
+                        System.out.println("We need an input between 1 and 3. Try again! <enter>");
+                        in.nextLine();
+                     }
+                  } else if (poolpartyAMChoice.equals("4")){
+                     System.out.println("Time to move along~ <enter>");
+                     inPoolParty = false;
+                     exploringPlaces = false;
+                     in.nextLine();
+                  } else {
+                     System.out.println("Not an answer we want. BACK TO THE DANCE FLOOR!");
+                  }
+                  
+               // PM   
+               } else if (choiceToD.equalsIgnoreCase("evening")){
+                  System.out.println("\t\tHuh? There's nobody here but it looks like there are USUALLY parties.<enter>");
+                  System.out.println("\t\tPusheen's looking for anything useful. What should he mess with?");
+                  System.out.println("\t\t1) A weird bottle? <1>");
+                  System.out.println("\t\t2) An out of place box? <2>");
+                  System.out.println("\t\t3) Or should we just move on to the end? <3>");
+                  
+                  String poolpartyPMChoice = in.nextLine();
+                  
+                  if (poolpartyPMChoice.equals("1")){
+                     System.out.println("\t\tOh! It's a spritzer! Take it with us? <yes/no> ");
+                     
+                     String spritzerPMChoice = in.nextLine();
+                     
+                     if (spritzerPMChoice.equalsIgnoreCase("yes")){
+                        for (int i = 0; i < itemCount; i++){
+                           if (inventory[i] != null && inventory[i].equalsIgnoreCase("Spritzer")){
+                              hasSpritzer = true;
+                              bagEmpty = false;
+                              break;
+                           }
+                        }
+                        if (hasSpritzer){
+                           System.out.println("Pusheen already has this! Chill! <enter>");
+                           in.nextLine();
+                        } else if (itemCount == inventory.length){
+                           System.out.println("Pusheen's bag is full! <enter>");
+                           in.nextLine();
+                        } else {
+                           System.out.println("Ok! Let's bring it with us! <enter>");
+                           inventory[itemCount] = "Spritzer";
+                           itemCount++;
+                           hasSpritzer = true;
+                           bagEmpty = false;
+                           in.nextLine();
+                        }
+                     } else if (spritzerPMChoice.equalsIgnoreCase("no")){
+                        System.out.println("It was weird looking anyway~ <enter>");
+                        in.nextLine();
+                     } else {
+                        System.out.println("Looking more for a 'yes' or 'no' answer. Try again! <enter>");
+                        in.nextLine();
+                     }
+                  } else if (poolpartyPMChoice.equals("2")){
+                     System.out.println("\t\tPusheen's not sure what to make of this box... what should we do?");
+                     System.out.println("\n\t\t1) Sit in it <1>");
+                     System.out.println("\n\t\t2) Leave it <2>");
+                     System.out.println("\n\t\t3) TRASH IT!! <3>");
+                     
+                     String hoboHousePMChoice = in.nextLine();
+                     
+                     // OOPS ENDING: Hobo House
+                     if (hoboHousePMChoice.equals("1")){
+                        System.out.println("Ohh... Pusheen kinda likes it here <3 we fit... so stay and sit! <enter>");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<\n\t\t\t\t\t\t\t\t\t\t\t\tHobo House ending"); 
+                        inPoolParty = false;
+                        exploringPlaces = false;
+                        
+                        
+                     } else if (hoboHousePMChoice.equals("2")){
+                        System.out.println("Meh, it was weird anyway <enter>");
+                        in.nextLine();
+                     } else if (hoboHousePMChoice.equals("3")){
+                        System.out.println("MWAHAHAHAHAHAHAHAHAAAAAAAAAAAAAA!!! <enter>");
+                        hoboHouseTrashed = true;
+                        in.nextLine();
+                     } else {
+                        System.out.println("We need an input between 1 and 3. Try again! <enter>");
+                        in.nextLine();
+                     }
+                  } else if (poolpartyPMChoice.equals("3")){
+                     System.out.println("Unto the breech! <enter> ");
+                     inPoolParty = false;
+                     exploringPlaces = false;
+                     in.nextLine();
+                  } else {
+                     System.out.println("Pusheen needs a number between 1 and 3. Try again! <enter>");
+                     in.nextLine();
+                  }
+                     
+               // ENDING: Broke da game      
+               } else {
+                  System.out.println("Not sure how you did it but you've managed to break my game. Congratz... I'll go... kick rocks or something..."); 
+                  inPoolParty = false;
+                  exploringPlaces = false;
+               }
+            }
+         }
+         
+         
+         // CHOICE: The Great Walls with China
+         else if (choiceToGo.equals("2")){
+            boolean inTheGreatWalls = true;
+            
+            while (inTheGreatWalls){
+               System.out.println("\t\tPusheen has wandered into the intimidating Great Walls with China!\n\t\tIT'S MASSIVE!!!\n\t\tThere seems to be treats here! Let's take a look!\n");
+               System.out.println("\t\t1) Timeless tuna <1>");
+               System.out.println("\t\t2) Chunky chicken <2>");
+               System.out.println("\t\t3) Honey ham <3>");
+               System.out.println("\t\t4) or move on to the last stage~ <4>");
+               
+               String thegreatwallsChoice = in.nextLine();
+               
+               if (thegreatwallsChoice.equals("1")){
+                  System.out.println("\t\tMAN this looks yummy!...but Pusheen is getting a weird thought about drying it. What should we do? <take/dry> ");
+                  
+                  String tunaChoice = in.nextLine();
+                  
+                  if (tunaChoice.equalsIgnoreCase("take")){
+                     System.out.println("You can't improve upon perfection! <enter>");
+                     in.nextLine();
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Dry Tuna") || inventory[i].equals("Tuna"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Tuna";
+                     itemCount++;
+                     hasTuna = true;
+                     hasDryTuna = false;
+                     bagEmpty = false;
+                     
+                  } else if (tunaChoice.equalsIgnoreCase("dry")){
+                     System.out.println("...not sure why but Pusheen's gut is saying this is the strat! <enter>");
+                     in.nextLine();
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Tuna") || inventory[i].equals("Dry Tuna"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Dry Tuna";
+                     itemCount++;
+                     hasTuna = false;
+                     hasDryTuna = true;
+                     bagEmpty = false;
+                  } else {
+                     System.out.println("We need to take the tuna or dry it. Try again! <enter>");
+                     in.nextLine();
+                  }
+               } else if (thegreatwallsChoice.equals("2")){
+                  System.out.println("\t\tMAN this looks yummy!...but Pusheen is getting a weird thought about drying it. What should we do? <take/dry> ");
+                  
+                  String chickenChoice = in.nextLine();
+                  
+                  if (chickenChoice.equalsIgnoreCase("take")){
+                     System.out.println("Chimkin is chimkin <enter>");
+                     in.nextLine();
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Dry Chicken") || inventory[i].equals("Chicken"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Chicken";
+                     itemCount++;
+                     hasChicken = true;
+                     hasDryChicken = false;
+                     bagEmpty = false;
+                  } else if (chickenChoice.equalsIgnoreCase("dry")){
+                     System.out.println("...not sure why but Pusheen's gut is saying this is the strat! <enter>");
+                     in.nextLine();
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Chicken") || inventory[i].equals("Dry Chicken"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Dry Chicken";
+                     itemCount++;
+                     hasChicken = false;
+                     hasDryChicken = true;
+                     bagEmpty = false;
+                  } else {
+                     System.out.println("We need to take the chicken or dry it. Try again! <enter>");
+                     in.nextLine();
+                  }
+               } else if (thegreatwallsChoice.equals("3")){
+                  System.out.println("\t\tMAN this looks yummy!...but Pusheen is getting a weird thought about drying it. What should we do? <take/dry> ");
+                  
+                  String hamChoice = in.nextLine();
+                  
+                  if (hamChoice.equalsIgnoreCase("take")){
+                     System.out.println("I would take that ham as is too! <enter>");
+                     in.nextLine();
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Dry Ham") || inventory[i].equals("Ham"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Ham";
+                     itemCount++;
+                     hasHam = true;
+                     hasDryHam = false;
+                     bagEmpty = false;
+                  } else if (hamChoice.equalsIgnoreCase("dry")){
+                     System.out.println("...not sure why but Pusheen's gut is saying this is the strat! <enter>");
+                     in.nextLine();
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Ham") || inventory[i].equals("Dry Ham"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Dry Ham";
+                     itemCount++;
+                     hasHam = false;
+                     hasDryHam = true;
+                     bagEmpty = false;
+                  } else {
+                     System.out.println("We need to take the ham or dry it. Try again! <enter>");
+                     in.nextLine();
+                  }
+               } else if (thegreatwallsChoice.equals("4")){
+                  System.out.println("10/4! Onward! <enter> ");
+                  inTheGreatWalls = false;
+                  exploringPlaces = false;
+                  in.nextLine();
+               } else {
+                  System.out.println("Hmm... try again!");
+               }
+            
+            }
+         }
+         
+         
+         // CHOICE:  Dis Track To Me
+         else if (choiceToGo.equals("3")){   
+            boolean inDisTrackToMe = true;
+            
+            while (inDisTrackToMe){
+               System.out.println("\t\tYou have arrived to the wonderful land of DisTrackToMe! What shall we do here?");
+               System.out.println("\t\t1) Check out the window shades <1>");
+               System.out.println("\t\t2) Mess with the highly reflective thing <2>");
+               System.out.println("\t\t3) ...art pen? <3>");
+               System.out.println("\t\t4) Move on~ <4>");
+                  
+               String distracktomeChoice = in.nextLine();
+                  
+               if (distracktomeChoice.equals("1")){
+                  System.out.println("\t\tThe shades are closed...\n\t\tShall we open them? <open/leave> ");
+                     
+                  String choiceShades = in.nextLine();
+                     
+                  if (choiceShades.equalsIgnoreCase("open")){
+                     System.out.println("Ooo! It's so lovely outside right now! <3 <enter> ");
+                        
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t (IIIIIIIIIIIIIIIIIII) ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.'.':;:;:'.'.'.'( ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.'.;' | `:.'.'.') ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.';'  |  `:'.'.'( ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.;'   |   `:.'.') ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t )'.';'____|____`:'.'( ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t (==@'     |     `@==) ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t )'.:     @()     :.'( ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.   ()@()   .'.') ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.  ()@()@)  .'.'( ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.   _\\||/_   .'.') ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'.  |-----|  .'.'( ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'.___\\___/___.'.') ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t )'.'============='.'( ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t ('.'             '.') ");
+                     System.out.println("\t\t\t\t\t\t\t\t\t\t  ~                 ~ ");
+                     shadesOpen = true;
+                     in.nextLine();
+                  } else if (choiceShades.equalsIgnoreCase("leave")){
+                     System.out.println("That's cool... NEXT! <enter>");
+                     shadesOpen = false;
+                     in.nextLine();
+                  } else {
+                     System.out.println("Not quite what we need here... Try again! <enter>");
+                     in.nextLine();
+                  }
+               } else if (distracktomeChoice.equals("2")){
+                  System.out.println("\t\tOooo! So shiny~\n\t\tShall Pusheen take it? <yes/no>");
+                     
+                  String shinyChoice = in.nextLine();
+                     
+                  if (shinyChoice.equalsIgnoreCase("yes")){
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && inventory[i].equalsIgnoreCase("Shiny")){
+                           hasShiny = true;
+                           bagEmpty = false;
+                           break;
+                        }
+                     }
+                     if (hasShiny){
+                        System.out.println("Pusheen already has this! Chill! <enter>");
+                        in.nextLine();
+                     } else if (itemCount == inventory.length){
+                        System.out.println("Pusheen's bag is full! <enter>");
+                        in.nextLine();
+                     } else if (itemCount < inventory.length){
+                        System.out.println("YAY! WE GET TO TAKE THE SHINY! <enter> ");
+                        inventory[itemCount] = "Shiny";
+                        itemCount++;
+                        hasShiny = true;
+                        bagEmpty = false;
+                        in.nextLine();
+                     } else {
+                        System.out.println("You can't put more in your inventory! Try something else~ <enter> ");
+                        in.nextLine();
+                     }
+                  } else if (shinyChoice.equalsIgnoreCase("no")){
+                     System.out.println("I'LL MISS YOU MY SHINY!!! </3 <enter>");
+                     in.nextLine();
+                  } else {
+                     System.out.println("Don't leave me in suspense! Yes or no? Try again! <enter> ");
+                     in.nextLine();
+                  }
+               } else if (distracktomeChoice.equals("3")){
+                  System.out.println("\t\tYou notice an art pen? Just sitting there... MENACINGLY! <enter>");
+                  in.nextLine();
+                  System.out.println("\t\tWhat do you do with the art pen? <leave it/tuck it away> ");
+                     
+                  String choiceArtPen = in.nextLine();
+                  
+                  if (choiceArtPen.equalsIgnoreCase("leave it")){
+                     System.out.println("Meh~ <enter>");
+                     in.nextLine();
+                  } else if (choiceArtPen.equalsIgnoreCase("tuck it away")){
+                     System.out.println("Hmmm... what if we hide it... UNDER THE COUCH!!! <enter>");
+                     hidArtPen = true;
+                     in.nextLine();
+                  } else {
+                     System.out.println("<leave it> or <tuck it away>?");
+                  }
+               } else if (distracktomeChoice.equals("4")){
+                  System.out.println("Ok! Let's go to the next place! <enter>");
+                  inDisTrackToMe = false;
+                  exploringPlaces = false; // moving onto FINAL AREA 
+                  in.nextLine();
+               } else {
+                  System.out.println("Not an option right now. Try again!");
+               }
+               
+            }
+         }
+         
+         // CHOICE: Herb-acious
+         else if (choiceToGo.equals("4")){
+            boolean inHerbAcious = true;
+            
+            while (inHerbAcious){
+               System.out.println("\t\tWhy does it smell funny here? OH! Pusheen found a funny looking weed that's giving off the weird smell~\n\t\tWhat should Pusheen do?");
+               System.out.println("\t\t1) ...Take some? <1>");
+               System.out.println("\t\t2) TEST IT! (for science!) <2>");
+               System.out.println("\t\t3) Move on~ <3>");
+               
+               String herbAciousChoice = in.nextLine();
+               
+               if (herbAciousChoice.equals("1")){
+                  System.out.println("\t\tPusheen sees a plush toy nearby! What should we do?:\n ");
+                  System.out.println("\t\tRoll the toy in the plant! Maybe we can throw it at Rodeo! <1>");
+                  System.out.println("\t\tJust take it with us. Why make life more difficult? <2>");
+                  
+                  String choiceWeed = in.nextLine();
+                  
+                  if (choiceWeed.equals("1")){
+                     System.out.println("\t\tPusheen proceeds to do some sushi rolls with the plush toy until it's stinky, like the weed! <enter>");
+                     in.nextLine();
+                     
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Weed") || inventory[i].equals("Stinky Plush"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Stinky Plush";
+                     itemCount++;
+                     hasStinkyPlush = true;
+                     hasWeed = false;
+                     bagEmpty = false;
+                  } else if (choiceWeed.equals("2")){
+                     System.out.println("\t\tWhy make life harder? Let's just tote it!");
+                     in.nextLine();
+                     
+                     for (int i = 0; i < itemCount; i++){
+                        if (inventory[i] != null && (inventory[i].equals("Stinky Plush") || inventory[i].equals("Weed"))){
+                           for (int j = i; j < itemCount - 1; j++){
+                              inventory[j] = inventory[j + 1];
+                           }
+                           inventory[itemCount - 1] = null;
+                           itemCount--;
+                           break;
+                        }
+                     }
+                     inventory[itemCount] = "Weed";
+                     itemCount++;
+                     hasStinkyPlush = false;
+                     hasWeed = true;
+                     bagEmpty = false;
+                  } else if (itemCount == inventory.length){
+                     System.out.println("Pusheen's bag is full! <enter>");
+                     in.nextLine();
+                  } else {
+                     System.out.println("We can play with it or just take it. Try again! <enter>");
+                     in.nextLine();
+                  } 
+                  
+               } else if (herbAciousChoice.equals("2")){
+                  System.out.println("Uhh.... ohh... <enter>");
+                  in.nextLine();
+                  System.out.println("Pusheen is... high? Definitely too high to function... I guess we just... chill~");
+                  System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<"); // ENDING: weed > GAME OVER
+                  System.exit(0);
+               } else if (herbAciousChoice.equals("3")){
+                  System.out.println("Let's hit the road!");
+                  inHerbAcious = false;
+                  exploringPlaces = false;
+               
+               } else {
+                  System.out.println("This wasn't one of the options. Try again!");
+               }
+            }
+         }
+      }  
+    
+      
+      // boolean exploringPlaces = false;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      
+      // WWIV - Facing Rodeo!
+      // boolean exploringPlaces = false;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      boolean inlastStage = true;
+      
+      while (inlastStage){
+         System.out.println("\t\tTHE TIME IS NYE TO FACE THE FOUL BEAST!!!");
+         System.out.println("\n\t\tShall we take arms <1> or attempt strategy? <2> ");
+         
+         String battleChoice = in.nextLine();
+         
+         //using items
+         if (battleChoice.equals("1")){
+            if (itemCount == 0){
+               System.out.println(" [ Your bag is empty ] \nUh oh... you didn't grab anything. Lady luck will decide your fate~");
+               battleChoice = "2";
+            } else {
+               System.out.println("\t\tMOUNT UP! What shall Pusheen draw from his bag?");   
+               
+               for (int i = 0; i < itemCount; i++){
+                  System.out.println("\t\t- " + inventory[i]);
+               }
+               
+               System.out.println("\t\t\n\nType in the exact item name <>");   
+               String armsChoice = in.nextLine();
+                  
+                  if (armsChoice.equalsIgnoreCase("Amazon Toilet")){ // ENDING: Pool Party
+                     if (hasAmazonToilet == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasAmazonToilet == true){
+                        System.out.println("The toilet has arrived!... What's this?... Rodeo is curling up in it... doesn't he know that's where people poop?");
+                        System.out.println("\nOk well, let's get out of here sister Stormy!");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tENDING: Pool Party"); 
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Spritzer")){
+                     if (hasSpritzer == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasSpritzer == true){ // GUILT ENDING: ...sorry
+                        System.out.println("HIS ULTIMATE WEAKNESS!!! LOOK AT HIM GO!!!");
+                        System.out.println("\nSister Stormy... looks kind of upset at Pusheen? What could be wrong?");
+                        System.out.println("\n'He asked me for help with his taxes. Taxes SUCK and he didn't know how to do them. You didn't have to be rude...'");
+                        System.out.println("\nAhh... welp... nothing we can do now but let her cool off on the walk home. Some of the most fruitful lessons we'll learn in life start as mistakes.");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tGUILT ENDING: ...sorry"); 
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Tuna")){ // GLaDOS ENDING
+                     if (hasTuna == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasTuna == true){
+                        System.out.println("Rodeo's... just... staring at it in confusion?");
+                        System.out.println("\nA cat that doesn't like fish?... how strange?");
+                        System.out.println("\nRodeo walks up to Pusheen... and gives him a no claw boop to the face.");
+                        System.out.println("\nPusheen scampers off in discomfort! Ahh!");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tGLaDOS ENDING: the meat is a lie");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Chicken")){ // GLaDOS ENDING
+                     if (hasChicken == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasChicken == true){
+                        System.out.println("Rodeo's... just... staring at it in confusion?");
+                        System.out.println("\nA cat that doesn't like chicken?... how strange?");
+                        System.out.println("\nRodeo walks up to Pusheen... and gives him a no claw boop to the face.");
+                        System.out.println("\nPusheen scampers off in discomfort! Ahh!");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tGLaDOS ENDING: the meat is a lie");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Ham")){ // GLaDOS ENDING
+                     if (hasHam == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasHam == true){
+                        System.out.println("Rodeo's... just... staring at it in confusion?");
+                        System.out.println("\nA cat that doesn't like ham?... how strange?");
+                        System.out.println("\nRodeo walks up to Pusheen... and gives him a no claw boop to the face.");
+                        System.out.println("\nPusheen scampers off in discomfort! Ahh!");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tGLaDOS ENDING: the meat is a lie");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Dry Tuna")){ // CHEF'S KISS ENDING
+                     if (hasDryTuna == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasDryTuna == true){
+                        System.out.println("Rodeo's in LOVE!!! He's basically inhaling his bites!");
+                        System.out.println("\nHe attempts to give compliments to the chef in between breaths.");
+                        System.out.println("\nSister Stormy is set free!");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tENDING: CHEF'S KISS");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Dry Chicken")){ // CHEF'S KISS ENDING
+                     if (hasDryChicken == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasDryChicken == true){
+                        System.out.println("Rodeo's in LOVE!!! He's basically inhaling his bites!");
+                        System.out.println("\nHe attempts to give compliments to the chef in between breaths.");
+                        System.out.println("\nSister Stormy is set free!");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tENDING: CHEF'S KISS");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Dry Ham")){ // CHEF'S KISS ENDING
+                     if (hasDryHam == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasDryHam == true){
+                        System.out.println("Rodeo's in LOVE!!! He's basically inhaling his bites!");
+                        System.out.println("\nHe attempts to give compliments to the chef in between breaths.");
+                        System.out.println("\nSister Stormy is set free!");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tENDING: CHEF'S KISS");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Shiny")){
+                     if (hasShiny == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasShiny == true){ // TWEAKER ENDING
+                        System.out.println("Rodeo's head darts to a spot on the ceiling where the shine of Pusheen's shiny is showing.");
+                        System.out.println("\nRodeo can't help his little chirps that slip out... and then he starts trying to jump for the wall shiny.");
+                        System.out.println("\nA cute kitty, surely, but not a thought between those eyes some days.");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tENDING: tweaker"); 
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Weed")){
+                     if (hasWeed == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasWeed == true){ // CRACKHEAD ENDING
+                        System.out.println("Rodeo's pupils dialate, concerningly... He's now yowling at Pusheen and giving aggressive boops. I think the claws are coming out!");
+                        System.out.println("\nPusheen is no match! He can't handle Rodeo's addiction!");
+                        System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\tENDING: crackhead");
+                        System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<"); 
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else if (armsChoice.equalsIgnoreCase("Stinky Plush")){
+                     if (hasStinkyPlush == false){
+                        System.out.println("Pusheen does not have this item! Try again!");
+                     } else if (hasStinkyPlush == true){ // HI TIMES ENDING
+                        System.out.println("Rodeo's going nuts! Throw the doll before he lunges!");
+                        System.out.println("\nPusheen yeets the doll to the other end of the room! Rodeo is playing the most engaged game of one man soccer leaving an opening for sister Stormy to escape.");
+                        System.out.println("\n\t\t\t\t\t\t\t\t\t\t\t\tENDING: HI times");
+                        inlastStage = false;
+                        System.exit(0);
+                     } else {
+                        System.out.println("Man >I< don't even know how we got here... and I made this game... Let's try this again.");
+                     }
+                  } else {
+                     System.out.println("Quick! Pick something from your inventory you can use to fight Rodeo with! <enter>");
+                     in.nextLine();
+                  }
+               
+            }
+            
+         }
+         
+         // don't use items
+         if (battleChoice.equals("2")){
+            if (shadesOpen && choiceToD.equalsIgnoreCase("morning")){
+               // ENDING: ADHD
+               System.out.println("Rodeo noticed the open shades...\n\nThe call of the wild beckons Rodeo to the window~");
+               System.out.println("He heeds it willingly! Chirping at every aviary flutter that passes by~");
+               System.out.println("He's going to be here a while... There's always online automatic tax filing features anyway~ Go home!");
+               System.out.println("\n\n\t\t\t\t\t\t\t\t\t\t\t\tENDING: ADHD");
+               inlastStage = false;
+               System.exit(0);
+            } else if (shadesOpen && choiceToD.equalsIgnoreCase("evening")){
+               System.out.println("Rodeo senses... a chaos magnet........the hidden art pen!\nHe cannot control his urge to boop! <enter>");
+               in.nextLine();
+               System.out.println("\n\n\t\t\t\t\t\t\t\t\t\t\t\tGOOD ENDING: Boop");
+               inlastStage = false;
+               System.exit(0);
+               // ENDING: Boop
+            } else if (hidArtPen == true){
+               System.out.println("Rodeo senses... a chaos magnet........the hidden art pen!\nHe cannot control his urge to boop! <enter>");
+               in.nextLine();
+               System.out.println("\n\n\t\t\t\t\t\t\t\t\t\t\t\tGOOD ENDING: Boop");
+               inlastStage = false;
+               System.exit(0);
+               // GUILT ENDING
+            } else if (hoboHouseTrashed == true){
+               System.out.println("Rodeo slowly walks up to the remains of the hobo house...");
+               System.out.println("He sniffs the pieces and stares, longingly, at the remains...");
+               System.out.println("Pusheen feels awful and sister Stormy is now distraught by Rodeo's sorrow.");
+               System.out.println("\t\t\t\t\t\t\t\t\t\t\t\tGUILT ENDING: ...sorry"); 
+               System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t>>>GAME OVER<<<");
+               inlastStage = false;
+               System.exit(0);
+               // ENDING: Pool Party
+            } else {
+               System.out.println("This adventure has been fun but you've errored your way into an accidental ending... CONGRATULATIONS!");
+               inlastStage = false;
+               System.exit(0);
+            }
+         } else {
+            System.out.println("I guess we can just chill here until you decide~");
+         }
+      }   
+   } // end of the method!!!
+}
+
+
+//-------------------------------------------------------------------------------------------------------------
+
+
+// for copy/paste use
+/*
+      System.out.println(" ");
+      in.nextLine();
+      
+      <enter>
+*/
+
+
+// ASCII art credit
+/*      
+// window art credit: no artist?
+// https://www.asciiart.eu/art/d22388d2f1bfa825
+
+(IIIIIIIIIIIIIIIIIII)
+)'.'.'.':;:;:'.'.'.'(
+('.'.'.;' | `:.'.'.')
+)'.'.';'  |  `:'.'.'(
+('.'.;'   |   `:.'.')
+)'.';'____|____`:'.'(
+(==@'     |     `@==)
+)'.:     @()     :.'(
+('.'.   ()@()   .'.')
+)'.'.  ()@()@)  .'.'(
+('.'.   _\|/_   .'.')
+)'.'.  |-----|  .'.'(
+('.'.___\___/___.'.')
+)'.'============='.'(
+('.'             '.')
+ ~                 ~
+
+
+// sword art credit: no artist?
+// https://www.asciiart.eu/art/46607bdc9af399ea
+   .
+  / \
+  | |
+  | |
+  |.|
+  |.|
+  |:|
+  |:|
+`--8--'
+   8
+   O
+
+
+// cat art credit: Haley Jane Wakenshaw (Flump)
+// title: Cat
+// https://www.asciiart.eu/art/1939d7cfa2cd18cd
+  ^~^  ,
+ ('Y') )
+ /   \/
+(\|||/) hjw
+
+
+// boarder credit: no artist?
+// https://www.asciiart.eu/ascii-dividers/gallery      
+:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*
+      
+*/
